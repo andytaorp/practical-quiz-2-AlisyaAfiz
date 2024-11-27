@@ -29,7 +29,7 @@ function App() {
       {/*TODO: add a form to add a new task*/}
       <Form onAddTask={handleAddTask}/>
       {/*TODO: add a list of tasks*/}
-      <TaskList onToggleTask={handleToggleTask} onDeleteTask={handleDeleteTask}/>
+      <TaskList tasks={tasks} onToggleTask={handleToggleTask} onDeleteTask={handleDeleteTask}/>
     </div>
   );
 }
