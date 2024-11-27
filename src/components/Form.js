@@ -5,9 +5,15 @@ export default function Form({ onAddTask }) {
 
   const handleSubmit = (e) => {
     // TODO: write code to handle form submission
+    e.preventDefault();
+    setDescription(e.target.value);
   };
 
-  return {
+  return (
     /*TODO: add a form to add a new task*/
-  };
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={description}></input>
+      <button type="submit">Add</button>
+    </form>
+  );
 }
