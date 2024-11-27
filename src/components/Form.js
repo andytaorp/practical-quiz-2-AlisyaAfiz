@@ -14,10 +14,14 @@ export default function Form({ onAddTask }) {
     setDescription("");
   }
 
+  function handleDesc(e) {
+    setDescription(e.target.value)
+  }
+
   return (
     /*TODO: add a form to add a new task*/
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="New Task" value={description}></input>
+      <input type="text" placeholder="New Task" value={description} onChange={handleDesc}></input>
       <button type="submit">Add</button>
     </form>
   );

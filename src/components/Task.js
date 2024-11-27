@@ -6,12 +6,12 @@ import React from "react";
 //  * @returns {React.Component} A <li> containing the task description and a checkbox to toggle completion
 //  */
 
-export default function Task({task, handleToggleTask, handleDeleteTask}) {
+export default function Task({task, onToggleTask, onDeleteTask}) {
     return (
-        <li>
-            <input type="checkbox" checked={task.status} onChange={handleToggleTask}></input>
+        <li style={{ textDecoration: task.status ? "line-through" : "none" }}>
+            <input type="checkbox" checked={task.status} onChange={() => onToggleTask(task.id)}></input>
             {task.description}
-            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            <button onClick={() => onDeleteTask(task.id)}>Delete</button>
         </li>
     )
 }
